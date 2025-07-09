@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "accountName": "NAMEX Tech Solutions",
+    "accountType": "Large Enterprise",
+    "line": "D&O Liability",
+    "broker": "Willis Towers",
+    "renewalDate": "2025-04-16",
+    "premium": 2.3,
+    "ratedPremium": 2.8,
+    "lossRatio": 32,
+    "appetite": "high",
+    "status": "Active",
+    "triage": 180,
+    "winnability": {
+      "score": 5,
+      "label": "Very Strong"
+    },
+    "logoUrl": "https://plus.unsplash.com/premium_photo-1661914978519-52a11fe159a7?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "address": "100 Innovation Drive, Suite 500, San Francisco, CA 94107",
+    "accountNumber": "10001",
+    "underwriter": "Alex Morgan"
+  },
+  {
+    "id": 2,
+    "accountName": "Alliance Healthcare Systems",
+    "accountType": "Mid-Market",
+    "line": "Medical Malpractice",
+    "broker": "Aon Risk",
+    "renewalDate": "2025-06-30",
+    "premium": 1.7,
+    "ratedPremium": 1.9,
+    "lossRatio": 38,
+    "appetite": "medium",
+    "status": "Under review",
+    "triage": 165,
+    "winnability": {
+      "score": 4,
+      "label": "Strong"
+    },
+    "logoUrl": "https://images.unsplash.com/photo-1602934445884-da0fa1c9d3b3?q=80&w=2988&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "address": "200 Medical Plaza, Suite 210, Chicago, IL 60611",
+    "accountNumber": "10002",
+    "underwriter": "Samantha Lee"
+  },
+  {
+    "id": 3,
+    "accountName": "Maritime Logistics Corp",
+    "accountType": "Shipping/Logistics",
+    "line": "Marine Cargo",
+    "broker": "Marsh McLennan",
+    "renewalDate": "2025-09-05",
+    "premium": 0.875,
+    "ratedPremium": 0.92,
+    "lossRatio": 25,
+    "appetite": "high",
+    "status": "Active",
+    "triage": 182,
+    "winnability": {
+      "score": 5,
+      "label": "Very Strong"
+    },
+    "logoUrl": "https://images.unsplash.com/photo-1620632523414-054c7bea12ac?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "address": "425 Harbor Boulevard, Suite 300, Seattle, WA 98104",
+    "accountNumber": "54383",
+    "underwriter": "Kate Johnson"
+  },
+  {
+    "id": 4,
+    "accountName": "GreenField Energy Ltd",
+    "accountType": "Energy Sector",
+    "line": "Environmental Liability",
+    "broker": "Aon Risk",
+    "renewalDate": "2025-07-22",
+    "premium": 1.2,
+    "ratedPremium": 1.4,
+    "lossRatio": 67,
+    "appetite": "cautious",
+    "status": "Under review",
+    "triage": 158,
+    "winnability": {
+      "score": 3,
+      "label": "Medium"
+    },
+    "logoUrl": "https://plus.unsplash.com/premium_photo-1661933982188-1b79ab50025a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "address": "300 Energy Park, Suite 120, Houston, TX 77002",
+    "accountNumber": "10004",
+    "underwriter": "Priya Patel"
+  }
+]

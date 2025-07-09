@@ -1,1 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@use "../_theme-colors" as theme;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text-primary: #656975;
+  --text-accent: #565f71;
+  --text-secondary: #6a6e7a;
+  --table-text: #696d79;
+  --table-background: #252a3d;
+  --background-primary: #0c0f17;
+  --accennt-color: #3a81f5;
+  --accent-color-light: #a4c5f9;
+  --dark-blue: #2a519c;
+  --chip-blue: #2c57aa;
+  --border-blue: #22293c;
+  --title-color: #e5e7eb;
+  --tab-label-color: #6d717b;
+  --accent-border-color: #3673d9;
+  --dark-gray: #6a6e7a;
+  --green-bright: #10b981;
+  --yellow-bright: #f59e0b;
+  --blue-bright: #3b82f6;
+  --red-bright: #ef4444;
+  --container-background: #1d2232;
+  --container-border: #353741;
+  --green-background: #2c6154;
+  --green-text: #658982;
+  --account-text: #848792;
+}
+
+html {
+  @include mat.theme(
+    (
+      color: (
+        primary: theme.$primary-palette,
+        tertiary: theme.$tertiary-palette,
+      ),
+      typography: Roboto,
+      density: -3,
+    )
+  );
+
+  @include mat.button-overrides(
+    (
+      tonal-disabled-container-color: #aaaaaa,
+      tonal-disabled-label-text-color: #777777,
+    )
+  );
+
+  @include mat.form-field-overrides(
+    (
+      outlined-input-text-color: var(--title-color),
+      outlined-hover-outline-color: var(--accent-color-light),
+    )
+  );
+
+  @include mat.tabs-overrides(
+    (
+      divider-height: 0,
+      active-label-text-color: var(--accent-color-light),
+      pagination-icon-color: var(--accent-color-light),
+    )
+  );
+
+  @include mat.table-overrides(
+    (
+      background-color: transparent,
+      header-headline-color: var(--text-accent),
+    )
+  );
+}
+
+@layer components {
+  .title {
+    color: var(--title-color);
+  }
+
+  .sub-title {
+    color: var(--table-text);
+  }
+
+  .account {
+    color: var(--account-text);
+  }
+}
+
+.new {
+  background-color: var(--blue-bright);
+}
+
+.pending {
+  background-color: var(--yellow-bright);
+}
+
+.completed {
+  background-color: var(--green-bright);
+}
+
+.inactive {
+  background-color: var(--red-bright);
+}

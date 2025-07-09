@@ -1,0 +1,26 @@
+<button
+  [matButton]="appearance()"
+  [type]="type()"
+  [disabled]="disabled() || loading()"
+  (click)="onClick()"
+>
+  @if (showLeftIcon()) {
+    <mat-icon>
+      {{ icon() }}
+    </mat-icon>
+  }
+
+  @if (loading()) {
+    <mat-spinner [diameter]="loadingSize()"> </mat-spinner>
+  } @else {
+    <span>
+      <ng-content></ng-content>
+    </span>
+  }
+
+  @if (showRightIcon()) {
+    <mat-icon>
+      {{ icon() }}
+    </mat-icon>
+  }
+</button>

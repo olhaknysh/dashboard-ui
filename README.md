@@ -1,6 +1,68 @@
-# Dashboard
+# Dashboard Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+A modern Angular 19 dashboard application with responsive design and proper folder structure.
+
+## Folder Structure
+
+```
+src/
+├── app/
+│   ├── components/          # Reusable components
+│   ├── services/           # Business logic services
+│   ├── models/             # TypeScript interfaces
+│   ├── guards/             # Route guards
+│   ├── interceptors/       # HTTP interceptors
+│   ├── pipes/              # Custom pipes
+│   ├── shared/             # Shared components, services, pipes, directives
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── pipes/
+│   │   └── directives/
+│   ├── features/           # Feature modules
+│   │   ├── dashboard/
+│   │   ├── profile/
+│   │   └── auth/
+│   ├── app.ts              # Root component
+│   ├── app.config.ts       # App configuration
+│   └── app.routes.ts       # App routes
+├── core/                   # Core services, guards, interceptors, models
+│   ├── services/
+│   ├── guards/
+│   ├── interceptors/
+│   └── models/
+├── assets/                 # Static assets
+├── environments/           # Environment configurations
+└── styles.scss            # Global styles
+```
+
+## Features
+
+- Responsive header with user greeting and task count
+- Search functionality
+- User profile page
+- Dashboard with task management
+- Mobile-first responsive design
+- Tailwind CSS for styling
+
+## Development
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm start
+
+# Build for production
+pnpm build
+```
+
+## Technologies
+
+- Angular 19
+- Tailwind CSS
+- TypeScript
+- RxJS
 
 ## Development server
 

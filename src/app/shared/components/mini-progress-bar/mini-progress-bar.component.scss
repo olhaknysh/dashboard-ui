@@ -1,0 +1,23 @@
+.mini-bar-green {
+  background: linear-gradient(
+    90deg,
+    var(--container-background) 0%,
+    var(--green-bright) 100%
+  );
+}
+
+.mini-bar-yellow {
+  background: linear-gradient(
+    90deg,
+    var(--container-background) 0%,
+    var(--yellow-bright) 100%
+  );
+}
+
+.mini-bar-blue {
+  background: linear-gradient(
+    90deg,
+    var(--container-background) 0%,
+    var(--blue-bright) 100%
+  );
+}

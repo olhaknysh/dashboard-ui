@@ -1,0 +1,17 @@
+<div class="min-h-screen bg-black flex flex-col">
+  @if (isAuthenticated) {
+    <app-header></app-header>
+    <div class="px-8">
+      <app-tabs
+        [tabs]="navigationTabs"
+        [activeTabId]="activeTabId"
+        (tabChange)="onTabChange($event)"
+      ></app-tabs>
+    </div>
+  }
+  <main class="flex-1 flex flex-col items-center px-8 py-6 w-full">
+    <div class="w-full">
+      <router-outlet />
+    </div>
+  </main>
+</div>

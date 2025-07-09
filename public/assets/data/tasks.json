@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "originator": {
+      "name": "John Doe"
+    },
+    "client": "ABC Corporation",
+    "line": "Commercial Auto",
+    "type": "Underwriter Referral",
+    "status": "New",
+    "created": "2024-01-15T10:00:00.000Z",
+    "description": "Review new policy application for high-risk driver"
+  },
+  {
+    "id": 2,
+    "originator": {
+      "name": "Jane Smith"
+    },
+    "client": "XYZ Industries",
+    "line": "Workers Compensation",
+    "type": "Loss Control Request",
+    "status": "Pending Review",
+    "created": "2024-01-14T14:30:00.000Z",
+    "description": "Safety inspection request for new facility"
+  },
+  {
+    "id": 3,
+    "originator": {
+      "name": "Mike Johnson"
+    },
+    "client": "Tech Solutions Inc",
+    "line": "Cyber Liability",
+    "type": "Email",
+    "status": "New",
+    "created": "2024-01-13T09:15:00.000Z",
+    "description": "Inquiry about cyber insurance coverage"
+  },
+  {
+    "id": 4,
+    "originator": {
+      "name": "Sarah Wilson"
+    },
+    "client": "Global Manufacturing",
+    "line": "Property",
+    "type": "Underwriter Referral",
+    "status": "Completed",
+    "created": "2024-01-12T11:45:00.000Z",
+    "description": "Property valuation review completed"
+  },
+  {
+    "id": 5,
+    "originator": {
+      "name": "Tom Brown"
+    },
+    "client": "Healthcare Partners",
+    "line": "Professional Liability",
+    "type": "Loss Control Request",
+    "status": "Pending Review",
+    "created": "2024-01-11T16:20:00.000Z",
+    "description": "Risk assessment for medical practice"
+  },
+  {
+    "id": 6,
+    "originator": {
+      "name": "Lisa Davis"
+    },
+    "client": "Retail Chain Corp",
+    "line": "General Liability",
+    "type": "Email",
+    "status": "New",
+    "created": "2024-01-10T13:00:00.000Z",
+    "description": "General liability coverage inquiry"
+  },
+  {
+    "id": 7,
+    "originator": {
+      "name": "Alex Chen"
+    },
+    "client": "Construction Co",
+    "line": "Builders Risk",
+    "type": "Underwriter Referral",
+    "status": "Pending Review",
+    "created": "2024-01-09T08:30:00.000Z",
+    "description": "New construction project review"
+  },
+  {
+    "id": 8,
+    "originator": {
+      "name": "David Miller"
+    },
+    "client": "Financial Services Ltd",
+    "line": "D&O Liability",
+    "type": "Loss Control Request",
+    "status": "New",
+    "created": "2024-01-08T15:45:00.000Z",
+    "description": "Corporate governance review request"
+  },
+  {
+    "id": 9,
+    "originator": {
+      "name": "Emily Rodriguez"
+    },
+    "client": "Transportation Express",
+    "line": "Commercial Auto",
+    "type": "Underwriter Referral",
+    "status": "New",
+    "created": "2024-01-07T12:20:00.000Z",
+    "description": "Fleet insurance application review"
+  },
+  {
+    "id": 10,
+    "originator": {
+      "name": "Michael Thompson"
+    },
+    "client": "Green Energy Corp",
+    "line": "Environmental Liability",
+    "type": "Loss Control Request",
+    "status": "Pending Review",
+    "created": "2024-01-06T15:10:00.000Z",
+    "description": "Environmental risk assessment for solar farm"
+  },
+  {
+    "id": 11,
+    "originator": {
+      "name": "Jennifer Lee"
+    },
+    "client": "Digital Marketing Agency",
+    "line": "Cyber Liability",
+    "type": "Email",
+    "status": "Completed",
+    "created": "2024-01-05T09:45:00.000Z",
+    "description": "Cyber security coverage inquiry resolved"
+  },
+  {
+    "id": 12,
+    "originator": {
+      "name": "Robert Garcia"
+    },
+    "client": "Food Distribution Network",
+    "line": "Product Liability",
+    "type": "Underwriter Referral",
+    "status": "New",
+    "created": "2024-01-04T14:30:00.000Z",
+    "description": "Product recall coverage application"
+  }
+]

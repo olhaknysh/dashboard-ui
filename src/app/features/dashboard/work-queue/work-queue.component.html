@@ -1,0 +1,41 @@
+<app-container>
+  <app-container-title>Work Queue</app-container-title>
+  <app-table
+    [columns]="tableColumns"
+    [data]="filteredTasks()"
+    [actions]="tableActions"
+    [headerConfig]="headerConfig"
+  >
+    <ng-container table-buttons>
+      <app-tabs
+        [tabs]="tabs"
+        [activeTabId]="activeFilter()"
+        (tabChange)="onTabChange($event)"
+      >
+      </app-tabs>
+    </ng-container>
+
+    <ng-template #customCell let-row let-column="column">
+      @switch (column.key) {
+        @case ("originator") {
+          <div class="originator-cell">
+            <app-user-avatar [name]="row.originator.name"></app-user-avatar>
+            <span class="originator-name">{{ row.originator.name }}</span>
+          </div>
+        }
+        @case ("clientLine") {
+          <div class="client-line-cell">
+            <div class="client-name">{{ row.client }}</div>
+            <div class="line-name">{{ row.line }}</div>
+          </div>
+        }
+        @case ("status") {
+          <app-status [status]="row.status"></app-status>
+        }
+        @default {
+          {{ row[column.key] }}
+        }
+      }
+    </ng-template>
+  </app-table>
+</app-container>

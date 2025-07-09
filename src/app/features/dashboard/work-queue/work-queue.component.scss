@@ -1,0 +1,29 @@
+.originator-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .originator-name {
+    color: var(--dark-gray);
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.client-line-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .client-name {
+    color: var(--dark-gray);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .line-name {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 400;
+  }
+}

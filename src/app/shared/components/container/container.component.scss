@@ -1,0 +1,13 @@
+.container-wrapper {
+  background-color: var(--container-background);
+  border: 1px solid var(--container-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container-wrapper.attention {
+  border-color: var(--yellow-bright);
+  border-width: 2px;
+}

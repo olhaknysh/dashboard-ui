@@ -1,0 +1,11 @@
+@if (policies()) {
+  <app-account-container title="Policies">
+    <app-container>
+      <div class="flex flex-row gap-12 no-wrap overflow-x-auto">
+        @for (policy of policies(); track policy.label) {
+          <app-policies-card [policy]="policy"></app-policies-card>
+        }
+      </div>
+    </app-container>
+  </app-account-container>
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "title": "PORTFOLIO LOSS RATIO TARGET",
+    "currentValue": 48.2,
+    "targetValue": 55,
+    "segmentsConfig": [
+      {
+        "range": [0, 55],
+        "status": "Good"
+      },
+      {
+        "range": [55, 70],
+        "status": "Warning"
+      },
+      {
+        "range": [70, 100],
+        "status": "Bad"
+      }
+    ]
+  },
+  {
+    "title": "RENEWAL RETENTION",
+    "currentValue": 65,
+    "targetValue": 63,
+    "segmentsConfig": [
+      {
+        "range": [0, 20],
+        "status": "Bad"
+      },
+      {
+        "range": [20, 50],
+        "status": "Warning"
+      },
+      {
+        "range": [50, 70],
+        "status": "Good"
+      },
+      {
+        "range": [70, 100],
+        "status": "Warning"
+      }
+    ]
+  }
+]

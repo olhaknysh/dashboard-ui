@@ -1,0 +1,49 @@
+<div class="w-full">
+  @if (label()) {
+    <div class="text-xs font-medium text-gray-300 mb-2 uppercase tracking-wide">
+      {{ label() }}
+    </div>
+  }
+  <div class="relative flex items-center w-full">
+    <div class="relative flex-1 h-7 bg-[#23273a] rounded-full overflow-hidden">
+      <div
+        class="absolute left-0 top-0 h-full rounded-full transition-all duration-300"
+        [ngClass]="getBarColor()"
+        [ngStyle]="{
+          width: percent() + '%',
+          boxShadow: '0 2px 8px 0 rgba(0,0,0,0.10)',
+        }"
+      ></div>
+
+      @if (currentValue()) {
+        <div
+          class="absolute top-1/2 -translate-y-1/2 font-bold text-white text-sm px-2"
+          [ngStyle]="{
+            left: 'calc(' + percent() + '% - 3.5rem)',
+            minWidth: '2.5rem',
+            textAlign: 'center',
+            zIndex: 2,
+          }"
+        >
+          {{ currentValue() | numberToCurrencyAbbr }}
+        </div>
+      }
+    </div>
+
+    @if (targetValue()) {
+      <div class="ml-4 text-sm font-medium text-gray-200 whitespace-nowrap">
+        {{ targetValue() | numberToCurrencyAbbr }}
+      </div>
+    }
+    <div
+      class="absolute left-0 w-0 text-xs text-gray-400 font-medium tracking-wide"
+      [ngStyle]="{
+        top: '2rem',
+        left: 'calc(' + percent() + '% - 3.5rem)',
+        transform: 'translateX(-50%)',
+      }"
+    >
+      {{ percent() | number: "1.0-0" }}%
+    </div>
+  </div>
+</div>

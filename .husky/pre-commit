@@ -1,0 +1,2 @@
+pnpm ng lint
+pnpm lint-staged --allow-empty

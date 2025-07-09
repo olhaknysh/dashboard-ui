@@ -1,0 +1,120 @@
+{
+  "id": 3,
+  "attention": [
+    {
+      "title": "Marine Survey Required",
+      "subtitle": "Scheduled for 06/12/2025",
+      "linkText": "Review Detail Link",
+      "additionalInfo": [
+        "Policy renewal in 3 months",
+        "Broker meeting scheduled for 05/10/2025"
+      ]
+    },
+    {
+      "title": "Loss Control Complete",
+      "subtitle": "Last inspection: 02/15/2025",
+      "linkText": "View Report",
+      "additionalInfo": [
+        "Loss control inspection completed",
+        "Last inspection: 02/15/2025"
+      ]
+    },
+    {
+      "title": "Claims Review Required",
+      "subtitle": "3 open claims  //  $245,000 TTL",
+      "linkText": "View Claims",
+      "additionalInfo": ["3 open claims", "$245,000 TTL"]
+    }
+  ],
+  "performanceMetrics": {
+    "winnability": {
+      "label": "Very Strong",
+      "score": 5,
+      "info": {
+        "linkText": "See all factors",
+        "additionalInfo": [
+          "Winnability",
+          "Winnability Trend",
+          "Winnability Target"
+        ]
+      }
+    },
+    "lossRatio": {
+      "value": 25,
+      "target": 42,
+      "info": {
+        "linkText": "View history",
+        "additionalInfo": [
+          "Historical Loss Ratio",
+          "Loss Ratio Trend",
+          "Loss Ratio Target"
+        ]
+      }
+    },
+    "premiumGrowth": {
+      "percent": 12.4,
+      "yoy": "YoY increase",
+      "value": 123,
+      "target": 150,
+      "info": {
+        "linkText": "View trend",
+        "additionalInfo": [
+          "Premium Growth",
+          "Premium Growth Trend",
+          "Premium Growth Target"
+        ]
+      }
+    },
+    "exposureDistribution": [
+      {
+        "label": "Marine Cargo",
+        "percent": 71.4
+      },
+      {
+        "label": "General Liability",
+        "percent": 20
+      },
+      {
+        "label": "Workers Comp",
+        "percent": 8.6
+      }
+    ]
+  },
+  "policies": [
+    {
+      "label": "Marine Cargo",
+      "icon": "directions_boat",
+      "iconColor": "blue",
+      "premium": 625000,
+      "effDate": 1782777600000
+    },
+    {
+      "label": "General Liability",
+      "icon": "brightness_high",
+      "iconColor": "green",
+      "premium": 175000,
+      "effDate": 1782777600000
+    },
+    {
+      "label": "Workers Comp",
+      "icon": "workers_comp",
+      "iconColor": "purple",
+      "premium": 75000,
+      "effDate": null
+    },
+    {
+      "label": "Property",
+      "icon": "flight",
+      "iconColor": "yellow",
+      "premium": 64829.83,
+      "effDate": null
+    },
+    {
+      "label": "Umbrella",
+      "icon": "umbrella",
+      "iconColor": "red",
+      "premium": 275000,
+      "effDate": 1778668800000
+    }
+  ]
+}

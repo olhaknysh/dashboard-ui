@@ -1,0 +1,67 @@
+.work-queue {
+  grid-area: work-queue;
+}
+
+.portfolio-goals {
+  grid-area: portfolio-goals;
+}
+
+.quick-actions {
+  grid-area: quick-actions;
+}
+
+.market-intelligence {
+  grid-area: market-intelligence;
+}
+
+.my-accounts {
+  grid-area: my-accounts;
+}
+
+.dashboard-container {
+  display: grid;
+  grid-template-areas:
+    "work-queue"
+    "portfolio-goals"
+    "quick-actions"
+    "market-intelligence"
+    "my-accounts";
+  grid-template-columns: 100%;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+@media (width >=40rem) {
+  .dashboard-container {
+    grid-template-areas:
+      "work-queue work-queue"
+      "portfolio-goals portfolio-goals"
+      "quick-actions market-intelligence"
+      "my-accounts my-accounts";
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (width >=64rem) {
+  .dashboard-container {
+    grid-template-areas:
+      "work-queue work-queue work-queue"
+      "portfolio-goals quick-actions market-intelligence"
+      "my-accounts my-accounts my-accounts";
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (width >=80rem) {
+  .dashboard-container {
+    grid-template-areas:
+      "work-queue portfolio-goals quick-actions"
+      "work-queue portfolio-goals market-intelligence"
+      "my-accounts my-accounts my-accounts";
+    grid-template-columns: 3fr 1fr 1fr;
+    gap: 1.5rem;
+    row-gap: 2rem;
+  }
+}

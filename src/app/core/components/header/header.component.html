@@ -1,0 +1,22 @@
+<header
+  class="header w-full flex items-center justify-between gap-4 flex-wrap py-4 px-8"
+>
+  <h1 class="title">
+    Hi {{ userStore.displayName() }}, welcome! You have
+    {{ taskStore.allTasksCount() }} open tasks.
+  </h1>
+  <div class="flex items-center gap-4 w-full sm:w-auto">
+    <app-search
+      placeholder="Search tasks..."
+      [value]="taskStore.searchTerm()"
+      (searchChange)="onSearchChange($event)"
+      (clear)="clearSearch()"
+    ></app-search>
+    <div class="flex items-center gap-2">
+      <app-user-avatar [name]="userStore.displayName()"></app-user-avatar>
+
+      <app-button size="sm" icon="logout" (clicked)="logout()"> </app-button>
+    </div>
+  </div>
+</header>
+<mat-divider></mat-divider>

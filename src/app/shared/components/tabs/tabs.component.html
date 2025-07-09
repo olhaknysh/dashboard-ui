@@ -1,0 +1,22 @@
+<div class="py-4" #tabsWrapper>
+  <mat-tab-group
+    [selectedIndex]="getActiveTabIndex()"
+    (selectedIndexChange)="onTabIndexChange($event)"
+    aria-label="Tabs"
+  >
+    @for (tab of tabs(); track tab.id) {
+      <mat-tab
+        [label]="tab.label"
+        [aria-label]="tab.label"
+        [disabled]="tab.disabled"
+      >
+        <ng-template mat-tab-label>
+          <div class="flex items-center gap-2">
+            <mat-icon>{{ tab.icon }}</mat-icon>
+            <span class="tab-label">{{ tab.label }}</span>
+          </div>
+        </ng-template>
+      </mat-tab>
+    }
+  </mat-tab-group>
+</div>

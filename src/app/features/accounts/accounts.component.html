@@ -1,0 +1,19 @@
+@if (selectedAccountId()) {
+  <div class="breadcrumbs">
+    <button class="breadcrumb-link" (click)="clearSelection()">Accounts</button>
+    <span class="breadcrumb-separator">/</span>
+    <span class="text-blue-600">{{ selectedAccountName() }}</span>
+  </div>
+
+  <app-account-details></app-account-details>
+} @else {
+  <ul class="account-list">
+    @for (acc of accounts(); track acc.id) {
+      <li>
+        <button class="account-link" (click)="selectAccount(acc.id)">
+          {{ acc.accountName }}
+        </button>
+      </li>
+    }
+  </ul>
+}

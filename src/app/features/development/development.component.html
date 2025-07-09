@@ -1,0 +1,26 @@
+<app-container class="text-center md:w-1/2 block mx-auto">
+  <app-container-title>{{
+    pageTitle || "Page Under Development"
+  }}</app-container-title>
+  <p class="text-gray-300 mb-6">
+    {{
+      pageDescription ||
+        "This page is currently being developed and will be available soon."
+    }}
+  </p>
+
+  <div class="space-y-3">
+    <div
+      class="flex items-center justify-center space-x-2 text-sm text-gray-400"
+    >
+      <mat-icon class="w-5 h-5">schedule</mat-icon>
+      <span>Coming Soon</span>
+    </div>
+  </div>
+
+  <div class="mt-8">
+    <app-button appearance="filled" icon="arrow_back" (clicked)="goBack()"
+      >Go Back</app-button
+    >
+  </div>
+</app-container>

@@ -1,0 +1,16 @@
+@if (account(); as acc) {
+  <div class="xl:flex xl:flex-row xl:justify-between">
+    <app-account-header
+      [logoUrl]="acc.logoUrl"
+      [accountName]="acc.accountName"
+      [address]="acc.address"
+      [accountNumber]="acc.accountNumber"
+      [broker]="acc.broker"
+      [underwriter]="acc.underwriter"
+    ></app-account-header>
+
+    <app-account-attention></app-account-attention>
+  </div>
+  <app-performance-metrics></app-performance-metrics>
+  <app-policies></app-policies>
+}

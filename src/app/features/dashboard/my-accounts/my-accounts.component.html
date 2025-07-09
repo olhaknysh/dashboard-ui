@@ -1,0 +1,59 @@
+<app-container>
+  <app-container-title>My Accounts</app-container-title>
+  <div class="flex flex-col gap-4">
+    <app-table
+      [columns]="columns"
+      [data]="filteredAccounts()"
+      [headerConfig]="headerConfig"
+      [actions]="tableActions"
+      (actionSelect)="onTableAction($event)"
+      (searchChange)="onSearch($event)"
+      (createClick)="onCreate()"
+    >
+      @for (row of filteredAccounts(); track row.id) {
+        <ng-container></ng-container>
+      }
+      <ng-template #customCell let-row let-column="column">
+        @switch (column.key) {
+          @case ("premium") {
+            <span class="font-bold text-blue-600">
+              {{ row.premium | numberToCurrencyAbbr }}
+            </span>
+          }
+          @case ("ratedPremium") {
+            <span>
+              {{ row.ratedPremium | numberToCurrencyAbbr }}
+            </span>
+          }
+          @case ("lossRatio") {
+            <app-chip mode="ratio" [value]="row.lossRatio">
+              <p style="font-weight: 800">{{ row.lossRatio }}%</p>
+            </app-chip>
+          }
+          @case ("appetite") {
+            <app-chip mode="appetite">{{ row.appetite | uppercase }}</app-chip>
+          }
+          @case ("triage") {
+            <app-chip mode="default">{{ row.triage }}</app-chip>
+          }
+          @case ("status") {
+            <app-status [status]="row.status"></app-status>
+          }
+          @case ("winnability") {
+            <app-chip mode="default">
+              <span style="display: flex; align-items: center; gap: 8px">
+                <app-winnability-score
+                  [score]="row.winnability.score"
+                ></app-winnability-score>
+                <span>{{ row.winnability.label }}</span>
+              </span>
+            </app-chip>
+          }
+          @default {
+            <span>{{ row[column.key] }}</span>
+          }
+        }
+      </ng-template>
+    </app-table>
+  </div>
+</app-container>

@@ -1,0 +1,92 @@
+<app-account-container [title]="'Performance Metrics'">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 account">
+    @if (performanceMetrics()) {
+      <app-performance-metric-card
+        [cardTitle]="'Winnability'"
+        [titleContent]="titleWinnabilityContent"
+        [linkText]="performanceMetrics()!.winnability.info!.linkText"
+        [dialogTitle]="'Winnability'"
+        [dialogItems]="performanceMetrics()!.winnability.info!.additionalInfo"
+      >
+        <ng-container *ngTemplateOutlet="winnabilityScore"></ng-container>
+      </app-performance-metric-card>
+      <app-performance-metric-card
+        [cardTitle]="'Loss Ratio'"
+        [linkText]="performanceMetrics()!.lossRatio.info!.linkText"
+        [dialogTitle]="'Loss Ratio'"
+        [dialogItems]="performanceMetrics()!.lossRatio.info!.additionalInfo"
+      >
+        <ng-container *ngTemplateOutlet="lossRatioContent"></ng-container>
+      </app-performance-metric-card>
+      <app-performance-metric-card
+        [cardTitle]="'Premium Growth'"
+        [linkText]="performanceMetrics()!.premiumGrowth.info!.linkText"
+        [dialogTitle]="'Premium Growth'"
+        [dialogItems]="performanceMetrics()!.premiumGrowth.info!.additionalInfo"
+      >
+        <ng-container *ngTemplateOutlet="premiumGrowthContent"></ng-container>
+      </app-performance-metric-card>
+
+      <app-performance-metric-card
+        [cardTitle]="'Exposure Distribution'"
+        [isDialogLinkShown]="false"
+      >
+        <ng-container
+          *ngTemplateOutlet="exposureDistributionContent"
+        ></ng-container>
+      </app-performance-metric-card>
+    }
+  </div>
+</app-account-container>
+
+<ng-template #titleWinnabilityContent>
+  <app-winnability-score
+    [score]="performanceMetrics()!.winnability.score"
+  ></app-winnability-score>
+</ng-template>
+
+<ng-template #winnabilityScore>
+  <p class="text-4xl text-white py-4">
+    {{ performanceMetrics()!.winnability.label }}
+  </p>
+</ng-template>
+
+<ng-template #lossRatioContent>
+  <div class="py-4">
+    <span class="text-white text-4xl"
+      >{{ performanceMetrics()!.lossRatio.value }}%</span
+    >
+    <span> vs {{ performanceMetrics()!.lossRatio.target }}% target</span>
+  </div>
+</ng-template>
+
+<ng-template #premiumGrowthContent>
+  <div class="py-4">
+    <p class="text-white text-4xl">
+      {{ performanceMetrics()!.premiumGrowth.percent }}%
+      <span class="sub-title text-base">{{
+        performanceMetrics()!.premiumGrowth.yoy
+      }}</span>
+    </p>
+
+    <p>
+      {{ performanceMetrics()!.premiumGrowth.value | numberToCurrencyAbbr }} vs
+      {{ performanceMetrics()!.premiumGrowth.target | numberToCurrencyAbbr }}
+      target
+    </p>
+  </div>
+</ng-template>
+
+<ng-template #exposureDistributionContent>
+  <div class="flex flex-col gap-2 py-4">
+    @for (
+      item of performanceMetrics()!.exposureDistribution;
+      track item.label
+    ) {
+      <app-mini-progress-bar
+        [value]="item.percent"
+        [label]="item.label"
+      ></app-mini-progress-bar>
+    }
+  </div>
+</ng-template>

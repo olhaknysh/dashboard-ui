@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "ng lint",
+    "prepare": "husky"
   },
   "prettier": {
     "overrides": [
@@ -20,26 +22,49 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-architects/ngrx-toolkit": "^19.1.0",
+    "@angular/cdk": "20.0.5",
     "@angular/common": "^20.0.0",
     "@angular/compiler": "^20.0.0",
-    "@angular/core": "^20.0.0",
+    "@angular/core": "^20.0.6",
     "@angular/forms": "^20.0.0",
+    "@angular/material": "20.0.5",
     "@angular/platform-browser": "^20.0.0",
     "@angular/router": "^20.0.0",
+    "@ngrx/signals": "^19.2.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-eslint/builder": "20.1.1",
     "@angular/build": "^20.0.5",
     "@angular/cli": "^20.0.5",
     "@angular/compiler-cli": "^20.0.0",
+    "@eslint/js": "^9.29.0",
+    "@ngrx/eslint-plugin": "^19.2.1",
+    "@playwright/test": "^1.53.2",
+    "@softarc/eslint-plugin-sheriff": "^0.18.1",
+    "@softarc/sheriff-core": "^0.18.1",
+    "@testing-library/angular": "^17.4.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/jasmine": "~5.1.0",
+    "angular-eslint": "20.1.1",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.29.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "husky": "^9.1.7",
     "jasmine-core": "~5.7.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.8.2"
+    "lint-staged": "^16.1.2",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.8.2",
+    "typescript-eslint": "8.34.1"
   }
 }

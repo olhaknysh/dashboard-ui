@@ -1,0 +1,98 @@
+<div
+  class="rounded-lg shadow-lg mb-6 w-full max-w-lg mx-auto text-white font-inter"
+>
+  <h3 class="text-xs font-semibold mb-2 tracking-wide uppercase opacity-80">
+    {{ title() }}
+  </h3>
+
+  <div class="relative w-full h-6 mb-1 flex items-center justify-center">
+    <div
+      class="absolute"
+      [style.left.%]="targetIndicatorPosition"
+      style="transform: translateX(-50%); z-index: 2"
+    >
+      <div class="flex flex-col items-center">
+        <div class="text-xs font-semibold text-blue-400">
+          TG:
+          @if (targetType === "single") {
+            {{ targetValue() | number: "1.0-0" }}%
+          } @else if (targetType === "range") {
+            {{ targetRange()!.min | number: "1.0-0" }}%-{{
+              targetRange()!.max | number: "1.0-0"
+            }}%
+          }
+        </div>
+        <div
+          class="w-0 h-0 border-l-[10px] border-r-[10px] border-b-[14px] border-l-transparent border-r-transparent border-b-blue-400"
+          style="transform: rotate(180deg)"
+        ></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative w-full h-10 flex items-center justify-center">
+    <div
+      class="absolute left-0 top-0 w-full h-10 flex rounded-full overflow-hidden"
+    >
+      <ng-container *ngFor="let segment of segments; let i = index">
+        <div
+          [ngStyle]="{
+            width: segment.width + '%',
+            'background-color': segment.color,
+            'border-top-left-radius': i === 0 ? '9999px' : '0',
+            'border-bottom-left-radius': i === 0 ? '9999px' : '0',
+            'border-top-right-radius':
+              i === segments.length - 1 ? '9999px' : '0',
+            'border-bottom-right-radius':
+              i === segments.length - 1 ? '9999px' : '0',
+          }"
+          class="h-full transition-all duration-500 ease-out"
+        ></div>
+      </ng-container>
+    </div>
+
+    <div
+      class="absolute top-full"
+      [style.left.%]="currentValueIndicatorPosition"
+      style="
+        transform: translateX(-50%);
+        margin-top: -0.2rem;
+        min-width: 40px;
+        z-index: 2;
+      "
+    >
+      <div class="flex flex-col items-center">
+        <div
+          class="w-0 h-0 border-l-[10px] border-r-[10px] border-t-[14px] border-l-transparent border-r-transparent"
+          [ngStyle]="{
+            'border-top-color': lowerArrowColor,
+            'border-radius': '0 0 10px 10px',
+          }"
+          style="
+            transform: rotate(180deg);
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+            position: relative;
+          "
+        >
+          <div
+            style="
+              position: absolute;
+              left: 50%;
+              top: -7px;
+              transform: translateX(-50%);
+              width: 14px;
+              height: 7px;
+              background: inherit;
+              border-radius: 0 0 7px 7px;
+            "
+          ></div>
+        </div>
+        <div class="text-xs font-semibold text-white mb-1 min-h-[1.25rem]">
+          @if (lowerArrowText) {
+            {{ lowerArrowText }}
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+::ng-deep {
+  .mdc-tab {
+    background-color: var(--background-primary) !important;
+    border-radius: 15px !important;
+    border-color: var(--border-blue) !important;
+  }
+
+  .tab-label {
+    color: var(--tab-label-color);
+  }
+
+  mat-icon {
+    color: var(--accennt-color) !important;
+  }
+
+  .mdc-tab--active {
+    background-color: var(--accennt-color) !important;
+    border-color: var(--accent-border-color) !important;
+
+    .tab-label {
+      color: var(--accent-color-light);
+    }
+
+    .mdc-tab-indicator {
+      display: none !important;
+    }
+
+    mat-icon {
+      color: #fff !important;
+    }
+  }
+
+  .mat-mdc-tab-labels {
+    gap: 1rem;
+  }
+}

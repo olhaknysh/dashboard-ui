@@ -1,0 +1,28 @@
+<app-container>
+  <app-container-title>Portfolio Goals</app-container-title>
+  @if (store.isLoading()) {
+    <app-spinner></app-spinner>
+  } @else if (store.error()) {
+    <app-error [error]="store.error()!"></app-error>
+  } @else {
+    <div class="flex flex-col gap-12">
+      @for (goal of store.getGoals(); track goal.title) {
+        <app-goals-progress-bar
+          [title]="goal.title"
+          [currentValue]="goal.currentValue"
+          [targetValue]="goal.targetValue"
+          [segmentsConfig]="goal.segmentsConfig"
+        ></app-goals-progress-bar>
+      }
+      @for (target of store.getTargetProgressBars(); track target.label) {
+        <app-target-progress-bar
+          [label]="target.label"
+          [percent]="target.percent"
+          [currentValue]="target.currentValue"
+          [targetValue]="target.targetValue"
+          [color]="'blue'"
+        ></app-target-progress-bar>
+      }
+    </div>
+  }
+</app-container>

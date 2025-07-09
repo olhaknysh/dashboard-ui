@@ -1,0 +1,55 @@
+.chip-ratio-green {
+  background: var(--green-bright) !important;
+
+  ::ng-deep .mdc-evolution-chip__text-label {
+    color: #fff !important;
+  }
+}
+
+.chip-ratio-yellow {
+  background: var(--yellow-bright) !important;
+
+  ::ng-deep .mdc-evolution-chip__text-label {
+    color: #fff !important;
+  }
+}
+
+.chip-ratio-red {
+  background: var(--red-bright) !important;
+
+  ::ng-deep .mdc-evolution-chip__text-label {
+    color: #fff !important;
+  }
+}
+
+.chip-appetite {
+  background: var(--dark-blue) !important;
+
+  ::ng-deep .mdc-evolution-chip__text-label {
+    color: #fff !important;
+  }
+}
+
+.chip-default {
+  background: transparent !important;
+  border: 1px solid var(--chip-blue) !important;
+
+  ::ng-deep .mdc-evolution-chip__text-label {
+    color: var(--chip-blue) !important;
+  }
+}
+
+.chip-attachments {
+  background: var(--green-background) !important;
+
+  ::ng-deep .mdc-evolution-chip__text-label {
+    color: var(--green-text) !important;
+  }
+}
+
+mat-chip {
+  font-weight: 600;
+  font-size: 13px;
+  height: 28px;
+  border-radius: 16px;
+}
