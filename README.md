@@ -2,7 +2,8 @@
 
 Responsive dashboard application built with Angular.
 
-[Click to visit the app](https://staging.d2go3tavtjpqzr.amplifyapp.com/auth)
+Hosted on AWS
+[https://dashboardhub.site](https://dashboardhub.site)
 
 ## Technologies Used
 
