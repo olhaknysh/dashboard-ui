@@ -2,6 +2,8 @@
 
 Responsive dashboard application built with Angular.
 
+[Click to visit the app](https://staging.d2go3tavtjpqzr.amplifyapp.com/auth)
+
 ## Technologies Used
 
 - **Angular 20+**: Standalone components, signals, modern syntaxes(@if, @for).
