@@ -1,0 +1,85 @@
+[
+  {
+    "id": "decision-support",
+    "label": "DECISION SUPPORT",
+    "count": 4,
+    "children": [
+      {
+        "id": "winnability",
+        "label": "Winnability",
+        "content": "Winnability content goes here."
+      },
+      {
+        "id": "exposure-review",
+        "label": "Exposure Review & Suggested Coverage",
+        "content": "Exposure Review & Suggested Coverage content goes here."
+      },
+      {
+        "id": "portfolio-strategy",
+        "label": "Portfolio Strategy Alignment",
+        "content": "Portfolio Strategy Alignment content goes here."
+      },
+      {
+        "id": "broker-analytics",
+        "label": "Broker Analytics",
+        "content": "Broker Analytics content goes here."
+      }
+    ]
+  },
+  {
+    "id": "risk-assessment",
+    "label": "RISK ASSESSMENT",
+    "count": 6,
+    "content": "Risk Assessment content goes here.",
+    "children": [
+      {
+        "id": "risk-assessment-1",
+        "label": "Risk Assessment 1",
+        "content": "Risk Assessment 1 content goes here."
+      },
+      {
+        "id": "risk-assessment-2",
+        "label": "Risk Assessment 2",
+        "content": "Risk Assessment 2 content goes here."
+      },
+      {
+        "id": "risk-assessment-3",
+        "label": "Risk Assessment 3",
+        "content": "Risk Assessment 3 content goes here."
+      },
+      {
+        "id": "risk-assessment-4",
+        "label": "Risk Assessment 4",
+        "content": "Risk Assessment 4 content goes here."
+      },
+      {
+        "id": "risk-assessment-5",
+        "label": "Risk Assessment 5",
+        "content": "Risk Assessment 5 content goes here."
+      },
+      {
+        "id": "risk-assessment-6",
+        "label": "Risk Assessment 6",
+        "content": "Risk Assessment 6 content goes here."
+      }
+    ]
+  },
+  {
+    "id": "documents-compliance",
+    "label": "DOCUMENTS AND COMPLIANCE",
+    "count": 2,
+    "content": "Documents and Compliance content goes here.",
+    "children": [
+      {
+        "id": "documents-compliance-1",
+        "label": "Documents and Compliance 1",
+        "content": "Documents and Compliance 1 content goes here."
+      },
+      {
+        "id": "documents-compliance-2",
+        "label": "Documents and Compliance 2",
+        "content": "Documents and Compliance 2 content goes here."
+      }
+    ]
+  }
+]

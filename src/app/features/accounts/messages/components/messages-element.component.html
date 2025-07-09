@@ -1,0 +1,29 @@
+<div
+  [class.message]="message()!.status === 'NEW'"
+  class="flex flex-col gap-4 bg-gray-800 border border-gray-600 p-4 rounded-lg"
+>
+  <div class="flex gap-2 items-start">
+    @if (message()!.status) {
+      <app-chip mode="messageStatus">{{ message()!.status }}</app-chip>
+    }
+    <h3 class="text-lg font-bold text-white">{{ message()!.title }}</h3>
+  </div>
+  <div class="flex flex-row gap-2 items-center">
+    <p class="text-sm text-gray-500">{{ message()!.sender }}</p>
+    <span class="text-sm text-gray-500">//</span>
+    <p class="text-sm text-gray-500">{{ message()!.date }}</p>
+  </div>
+  <p class="text-sm title">{{ message()!.body }}</p>
+
+  @if (message()!.attachments) {
+    <app-chip mode="attachments"
+      >{{ message()!.attachments }} attachments</app-chip
+    >
+  }
+
+  @if (message()!.reply) {
+    <app-button appearance="filled" icon="reply" size="md" (click)="onReply()"
+      >Reply</app-button
+    >
+  }
+</div>

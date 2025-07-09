@@ -1,0 +1,67 @@
+<app-account-container title="Policies">
+  <app-container>
+    <app-table
+      [columns]="columns"
+      [data]="filteredPolicies()"
+      [headerConfig]="headerConfig"
+      [actions]="tableActions"
+      (actionSelect)="onTableAction($event)"
+      (searchChange)="onSearch($event)"
+    >
+      @for (row of filteredPolicies(); track row.id) {
+        <ng-container></ng-container>
+      }
+      <ng-template #customCell let-row let-column="column">
+        @switch (column.key) {
+          @case ("line") {
+            <span class="flex items-center gap-2">
+              <div class="flex items-center gap-2">
+                <mat-icon>{{ row.icon }}</mat-icon>
+                <span class="title">{{ row.line }}</span>
+              </div>
+              <p class="text-sm text-gray-500">{{ row.id }}</p>
+            </span>
+          }
+          @case ("status") {
+            <app-status [status]="row.status"></app-status>
+          }
+          @case ("expiringTech") {
+            <span>{{ row[column.key] | numberToCurrencyAbbr: "$" : "" }}</span>
+          }
+          @case ("expiringPremium") {
+            <span>{{ row[column.key] | numberToCurrencyAbbr: "$" : "" }}</span>
+          }
+          @case ("renewalToTech") {
+            <span>{{ row[column.key] | numberToCurrencyAbbr: "$" : "" }}</span>
+          }
+          @case ("renewalTech") {
+            <span>{{ row[column.key] | numberToCurrencyAbbr: "$" : "" }}</span>
+          }
+          @case ("renewalPremium") {
+            <span>{{ row[column.key] | numberToCurrencyAbbr: "$" : "" }}</span>
+          }
+          @case ("rateChange") {
+            <span
+              [ngClass]="{
+                'text-green-500': row.rateChange > 5,
+                'text-red-500': row.rateChange < 5,
+              }"
+            >
+              {{ row.rateChange !== null ? row.rateChange + "%" : "N/A" }}
+            </span>
+          }
+          @case ("lossRatio") {
+            <app-chip mode="ratio" [value]="row.lossRatio">
+              <p style="font-weight: 800">
+                {{ row.lossRatio !== null ? row.lossRatio + "%" : "N/A" }}
+              </p>
+            </app-chip>
+          }
+          @default {
+            <span>{{ row[column.key] }}</span>
+          }
+        }
+      </ng-template>
+    </app-table>
+  </app-container>
+</app-account-container>

@@ -1,4 +1,9 @@
-export type ChipMode = 'ratio' | 'appetite' | 'default' | 'attachments';
+export type ChipMode =
+  | 'ratio'
+  | 'appetite'
+  | 'default'
+  | 'attachments'
+  | 'messageStatus';
 
 export enum ChipClass {
   RatioGreen = 'chip-ratio-green',
@@ -7,4 +12,5 @@ export enum ChipClass {
   Appetite = 'chip-appetite',
   Attachments = 'chip-attachments',
   Default = 'chip-default',
+  MessageStatus = 'chip-message-status',
 }

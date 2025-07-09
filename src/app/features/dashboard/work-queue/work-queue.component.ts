@@ -7,6 +7,7 @@ import {
   DoCheck,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
 
 import {
   ContainerComponent,
@@ -16,9 +17,11 @@ import {
   StatusComponent,
   TabsComponent,
   Tab,
+  DialogComponent,
 } from '../../../shared';
 import { TaskStore } from '../../../store';
-import { TaskStatus, TaskType } from '../../../services/tasks';
+import { Task, TaskStatus, TaskType } from '../../../services/tasks';
+import { NotificationService } from '../../../services';
 
 import { WorkQueueType } from './work-queue.component.interface';
 import {
@@ -45,6 +48,8 @@ import {
 })
 export class WorkQueueComponent implements DoCheck {
   private readonly taskStore = inject(TaskStore);
+  private readonly notificationService = inject(NotificationService);
+  private readonly dialog = inject(MatDialog);
 
   activeFilter = signal<WorkQueueType>(WorkQueueType.ASSIGNED);
 
@@ -113,5 +118,35 @@ export class WorkQueueComponent implements DoCheck {
 
   onTabChange(tabId: string) {
     this.setActiveFilter(tabId as WorkQueueType);
+  }
+
+  onActionSelect(event: { action: string; row: unknown }) {
+    if (event.action === 'view') {
+      this.dialog.open(DialogComponent, {
+        data: {
+          title: 'Task Details',
+          items: [
+            (event.row as Task).originator.name,
+            (event.row as Task).client,
+            (event.row as Task).line,
+            (event.row as Task).type,
+          ],
+        },
+      });
+    }
+
+    if (event.action === 'delete') {
+      this.taskStore.deleteTask((event.row as Task).id);
+    }
+
+    if (event.action === 'complete') {
+      this.taskStore.updateTask((event.row as Task).id, {
+        status: TaskStatus.COMPLETED,
+      });
+    }
+
+    if (event.action === 'edit') {
+      this.notificationService.show('Not implemented');
+    }
   }
 }

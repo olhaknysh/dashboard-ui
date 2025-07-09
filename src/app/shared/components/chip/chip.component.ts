@@ -42,6 +42,8 @@ export class ChipComponent {
         return ChipClass.Appetite;
       case 'attachments':
         return ChipClass.Attachments;
+      case 'messageStatus':
+        return ChipClass.MessageStatus;
       default:
         return ChipClass.Default;
     }

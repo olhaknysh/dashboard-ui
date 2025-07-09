@@ -1,0 +1,37 @@
+<app-account-container title="Account Status">
+  <app-container>
+    <div class="account-status-stepper">
+      @for (step of steps; track step; let i = $index) {
+        <div class="step-item">
+          <div
+            class="step-circle"
+            [ngClass]="{
+              completed: i < currentStep(),
+              active: i === currentStep(),
+              incomplete: i > currentStep(),
+            }"
+          >
+            @if (i < currentStep()) {
+              <span class="checkmark">&#10003;</span>
+            }
+            @if (i === currentStep()) {
+              <span class="checkmark">&#10003;</span>
+            }
+            @if (i > currentStep()) {
+              <span class="dashed-circle"></span>
+            }
+          </div>
+          <div class="step-label">{{ step }}</div>
+        </div>
+        <div
+          *ngIf="i < steps.length - 1"
+          class="step-line"
+          [ngClass]="{
+            completed: i < currentStep(),
+            incomplete: i >= currentStep(),
+          }"
+        ></div>
+      }
+    </div>
+  </app-container>
+</app-account-container>

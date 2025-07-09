@@ -1,0 +1,20 @@
+<app-account-container title="Compliance" [titleContent]="titleContent">
+  <app-container>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      @for (item of compliance(); track item) {
+        <div class="flex flex-row gap-2 items-center">
+          <mat-icon>check_circle</mat-icon>
+          <p class="flex-1 text-white">{{ item }}</p>
+        </div>
+      }
+    </div>
+  </app-container>
+</app-account-container>
+
+<ng-template #titleContent>
+  <app-dialog-link
+    [text]="'See all compliance items'"
+    [dialogTitle]="'Compliance Items'"
+    [dialogItems]="compliance()"
+  ></app-dialog-link>
+</ng-template>

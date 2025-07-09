@@ -11,6 +11,11 @@ import { AccountHeaderComponent } from './account-header';
 import { AccountAttentionComponent } from './account-attention';
 import { PerformanceMetricsComponent } from './performance-metrics';
 import { PoliciesComponent } from './policies';
+import { AccountStatusComponent } from './account-status';
+import { ComplianceComponent } from './compliance';
+import { AccountSpecificationComponent } from './account-specification';
+import { MessagesComponent } from './messages';
+import { PoliciesTableComponent } from './policies-table';
 
 @Component({
   selector: 'app-account-details',
@@ -20,6 +25,11 @@ import { PoliciesComponent } from './policies';
     AccountAttentionComponent,
     PerformanceMetricsComponent,
     PoliciesComponent,
+    AccountStatusComponent,
+    ComplianceComponent,
+    AccountSpecificationComponent,
+    MessagesComponent,
+    PoliciesTableComponent,
   ],
   templateUrl: './account-details.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,0 +1,118 @@
+.account-status-stepper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px dashed var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  background: transparent;
+  font-size: 24px;
+  color: var(--text-primary);
+}
+
+.step-circle.completed,
+.step-circle.active {
+  border: 2px solid var(--green-bright);
+  color: var(--green-bright);
+}
+
+.step-circle.completed {
+  background: var(--container-background);
+}
+
+.step-circle.active {
+  background: var(--container-background);
+  color: var(--green-bright);
+}
+
+.checkmark {
+  font-size: 24px;
+  color: var(--green-bright);
+}
+
+.dashed-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px dashed var(--text-primary);
+  display: inline-block;
+}
+
+.step-label {
+  color: #fff;
+  font-size: 18px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  border-top: 2px dashed var(--text-primary);
+  margin: 0 8px;
+  position: relative;
+  top: -1rem;
+}
+
+.step-line.completed {
+  border-top: 2px solid var(--green-bright);
+}
+
+@media (max-width: 64rem) {
+  .account-status-stepper {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .step-item {
+    min-width: unset;
+    min-height: 80px;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .step-circle {
+    margin-bottom: 0;
+    margin-right: 8px;
+  }
+
+  .step-label {
+    margin-top: 0;
+    margin-left: 8px;
+    text-align: left;
+  }
+
+  .step-line {
+    width: 2px;
+    min-height: 40px;
+    height: 40px;
+    border-top: none;
+    border-left: 2px dashed var(--text-primary);
+    margin: 8px 0 8px 19px;
+    position: static;
+    background: none;
+    z-index: 1;
+  }
+
+  .step-line.completed {
+    border-left: 2px solid var(--green-bright);
+    border-top: none;
+  }
+}

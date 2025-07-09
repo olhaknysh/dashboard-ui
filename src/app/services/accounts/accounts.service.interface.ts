@@ -22,3 +22,37 @@ export interface Account {
   accountNumber: string;
   underwriter: string;
 }
+
+export interface AccountSpecificationNode {
+  id: string;
+  label: string;
+  count?: number;
+  content?: string;
+  children?: AccountSpecificationNode[];
+}
+
+export interface AccountSpecificationInfo {
+  id: string;
+  overallScore: Winnability & { value: number };
+  historicalTrend: {
+    labels: string[];
+    data: number[];
+  };
+  position: {
+    label: string;
+    value: number;
+  }[];
+  increasingWinnability: {
+    label: string;
+    value: number;
+  }[];
+  decreasingWinnability: {
+    label: string;
+    value: number;
+  }[];
+  aiRecommendations: {
+    title: string;
+    description: string;
+    action: string;
+  }[];
+}

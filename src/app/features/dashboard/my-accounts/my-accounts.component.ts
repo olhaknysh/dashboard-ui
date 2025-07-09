@@ -6,6 +6,7 @@ import {
   signal,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
 
 import { AccountsStore } from '../../../store';
 import {
@@ -16,6 +17,7 @@ import {
   StatusComponent,
   ChipComponent,
   WinnabilityScoreComponent,
+  DialogComponent,
 } from '../../../shared';
 
 import {
@@ -23,6 +25,7 @@ import {
   MY_ACCOUNTS_TABLE_ACTIONS,
   MY_ACCOUNTS_TABLE_HEADER_CONFIG,
 } from './my-accounts.component.constant';
+import { Account, NotificationService } from '../../../services';
 
 @Component({
   selector: 'app-my-accounts',
@@ -43,6 +46,8 @@ import {
 })
 export class MyAccountsComponent {
   private readonly store = inject(AccountsStore);
+  private readonly dialog = inject(MatDialog);
+  private readonly notificationService = inject(NotificationService);
   search = signal('');
 
   columns = MY_ACCOUNTS_COLUMNS;
@@ -76,7 +81,26 @@ export class MyAccountsComponent {
   }
 
   onTableAction(_event: { action: string; row: unknown }) {
-    // TODO: Implement action handling
-    // alert(`Action: ${event.action} on account: ${event.row.accountName}`);
+    if (_event.action === 'view') {
+      this.dialog.open(DialogComponent, {
+        data: {
+          title: 'Account Details',
+          items: [
+            (_event.row as Account).accountName,
+            (_event.row as Account).accountType,
+            (_event.row as Account).line,
+            (_event.row as Account).broker,
+          ],
+        },
+      });
+    }
+
+    if (_event.action === 'delete') {
+      this.store.deleteAccount((_event.row as Account).id);
+    }
+
+    if (_event.action === 'edit') {
+      this.notificationService.show('Not implemented');
+    }
   }
 }

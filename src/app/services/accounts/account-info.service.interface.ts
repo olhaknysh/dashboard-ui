@@ -42,7 +42,31 @@ export interface PerformanceMetrics {
 
 export interface AccountInfo {
   id: number;
+  currentStep: number;
   attention: AccountAttention[];
   performanceMetrics: PerformanceMetrics;
   policies: Policy[];
+  compliance: string[];
+}
+
+export interface Message {
+  id: number;
+  status: string;
+  title: string;
+  sender: string;
+  date: string;
+  body: string;
+  attachments: number;
+  reply: boolean;
+}
+
+export interface Policy {
+  id: number;
+  line: string;
+  icon: string;
+  iconColor: string;
+  effDate: number | null;
+  expDate: number | null;
+  status: string;
+  statusColor: string;
 }

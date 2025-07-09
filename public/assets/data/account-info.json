@@ -1,5 +1,6 @@
 {
   "id": 3,
+  "currentStep": 3,
   "attention": [
     {
       "title": "Marine Survey Required",
@@ -116,5 +117,11 @@
       "premium": 275000,
       "effDate": 1778668800000
     }
+  ],
+  "compliance": [
+    "Key Verification",
+    "Regulatory Approval",
+    "Required Documents",
+    "Financial Verification"
   ]
 }

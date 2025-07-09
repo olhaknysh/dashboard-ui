@@ -5,6 +5,7 @@
     [data]="filteredTasks()"
     [actions]="tableActions"
     [headerConfig]="headerConfig"
+    (actionSelect)="onActionSelect($event)"
   >
     <ng-container table-buttons>
       <app-tabs

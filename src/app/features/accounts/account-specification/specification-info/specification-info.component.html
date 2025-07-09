@@ -1,0 +1,111 @@
+@if (info()) {
+  <div>
+    <h1 class="text-5xl font-bold text-white">
+      {{ info()!.id | uppercaseFirst }}
+    </h1>
+
+    <div
+      class="grid lg:grid-cols-[1fr_1fr_1fr] md:grid-cols-[1fr_1fr] grid-cols-1 gap-4 mt-4"
+    >
+      <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+        <h3 class="title">Overall Score</h3>
+        <div class="flex items-center justify-between">
+          <p class="text-4xl font-bold text-white">
+            {{ info()!.overallScore.value }} %
+          </p>
+          <app-chip mode="default">
+            <span style="display: flex; align-items: center; gap: 8px">
+              <app-winnability-score
+                [score]="info()!.overallScore.score"
+              ></app-winnability-score>
+              <span>{{ info()!.overallScore.label }}</span>
+            </span>
+          </app-chip>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+        <h3 class="title">Historical Trend</h3>
+        <app-line-chart
+          [labels]="info()!.historicalTrend.labels"
+          [data]="info()!.historicalTrend.data"
+        ></app-line-chart>
+      </div>
+
+      <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+        <h3 class="title">Position</h3>
+        <div class="flex flex-col gap-2 py-4">
+          @for (item of info()!.position; track item.label) {
+            <app-mini-progress-bar
+              [value]="item.value"
+              [label]="item.label"
+            ></app-mini-progress-bar>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-[1fr_1fr] grid-cols-1 gap-4 mt-4">
+      <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+        <div class="flex items-center gap-2">
+          <mat-icon class="increasing-icon">arrow_upward</mat-icon>
+          <h3 class="title">Increasing Winnability</h3>
+        </div>
+        <div class="flex flex-col gap-2 py-4">
+          @for (item of info()!.increasingWinnability; track item.label) {
+            <app-mini-progress-bar
+              [value]="item.value"
+              [label]="item.label"
+              [labelPosition]="labelPosition"
+              [color]="increasingColor"
+            ></app-mini-progress-bar>
+          }
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+        <div class="flex items-center gap-2">
+          <mat-icon class="decreasing-icon">arrow_downward</mat-icon>
+          <h3 class="title">Decreasing Winnability</h3>
+        </div>
+        <div class="flex flex-col gap-2 py-4">
+          @for (item of info()!.decreasingWinnability; track item.label) {
+            <app-mini-progress-bar
+              [value]="item.value"
+              [label]="item.label"
+              [labelPosition]="labelPosition"
+              [color]="decreasingColor"
+            ></app-mini-progress-bar>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 w-full mt-4">
+      <h3 class="title">AI Recommendations</h3>
+      <div class="flex flex-col gap-2 py-4">
+        @for (item of info()!.aiRecommendations; track item.title) {
+          <div
+            class="flex justify-between items-center bg-gray-700 rounded-lg p-4 border border-gray-600"
+          >
+            <div>
+              <h4 class="text-lg font-bold text-white">{{ item.title }}</h4>
+              <p class="text-sm text-gray-400">{{ item.description }}</p>
+            </div>
+
+            <app-button
+              class="ai-button"
+              appearance="filled"
+              (click)="onApply(item)"
+              >{{ item.action }}</app-button
+            >
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+} @else {
+  <div>
+    <p class="text-2xl font-bold text-white">No information available</p>
+  </div>
+}

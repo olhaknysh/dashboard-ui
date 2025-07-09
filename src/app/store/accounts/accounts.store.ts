@@ -78,6 +78,12 @@ export const AccountsStore = signalStore(
     deleteSelectedAccount(): void {
       localStorage.removeItem(StorageKeys.ACCOUNT_INFO);
     },
+    deleteAccount(id: number): void {
+      patchState(store, {
+        accounts: store.accounts().filter((account) => account.id !== id),
+      });
+      notificationService.show('Account deleted successfully');
+    },
   })),
   withHooks({
     onInit({ loadAccounts, checkSelectedAccount }) {

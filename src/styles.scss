@@ -30,6 +30,7 @@
   --green-background: #2c6154;
   --green-text: #658982;
   --account-text: #848792;
+  --account-card-background: rgb(31 41 55);
 }
 
 html {
@@ -70,6 +71,15 @@ html {
     (
       background-color: transparent,
       header-headline-color: var(--text-accent),
+    )
+  );
+
+  @include mat.tree-overrides(
+    (
+      container-background-color: var(--account-card-background),
+      node-text-color: var(--title-color),
+      node-text-size: 1.2rem,
+      node-min-height: 3rem,
     )
   );
 }

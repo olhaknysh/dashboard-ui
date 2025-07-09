@@ -10,7 +10,7 @@
       <div
         class="absolute left-0 top-0 h-full rounded-s-lg transition-all duration-300"
         [ngClass]="getBarClass()"
-        [style.width.%]="value()"
+        [style.width.%]="abs(value())"
       ></div>
     </div>
     @if (label() && labelPosition() === "right") {

@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { AccountContainerComponent } from '../account-container';
 import { ContainerComponent } from '../../../shared';
-import { AccountInfoStore } from '../../../store';
 import { PoliciesCardComponent } from './components/policies-card.component';
+import { AccountInfoStore } from '../../../store';
 
 @Component({
   selector: 'app-policies',
@@ -18,6 +18,5 @@ import { PoliciesCardComponent } from './components/policies-card.component';
 })
 export class PoliciesComponent {
   private readonly store = inject(AccountInfoStore);
-
   policies = this.store.getPolicies;
 }

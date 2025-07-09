@@ -23,6 +23,10 @@ export class MiniProgressBarComponent {
     MiniProgressBarLabelPosition.Right,
   );
 
+  abs(value: number): number {
+    return Math.abs(value);
+  }
+
   getBarClass(): string {
     switch (this.color()) {
       case MiniProgressBarColor.Green:

@@ -16,3 +16,5 @@ export * from './spinner';
 export * from './error';
 export * from './dialog';
 export * from './dialog-link';
+export * from './line-chart';
+export * from './icon';

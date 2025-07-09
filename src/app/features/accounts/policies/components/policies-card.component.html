@@ -1,0 +1,23 @@
+<div
+  class="flex flex-col gap-4 p-4 border border-gray-700 bg-gray-800 rounded-lg"
+>
+  <div class="flex flex-row gap-2">
+    <mat-icon [attr.style]="'color: ' + policy()!.iconColor + ' !important;'">{{
+      policy()!.icon
+    }}</mat-icon>
+    <h3 class="text-lg font-bold title">{{ policy()!.label }}</h3>
+  </div>
+  <div class="flex flex-col gap-2">
+    <p class="text-sm text-gray-500">
+      Premium: {{ policy()!.premium | currency }}
+    </p>
+    <p class="text-sm text-gray-500">
+      Effective Date:
+      @if (policy()!.effDate) {
+        {{ policy()!.effDate | date: "MM/dd/yyyy" }}
+      } @else {
+        ---
+      }
+    </p>
+  </div>
+</div>
